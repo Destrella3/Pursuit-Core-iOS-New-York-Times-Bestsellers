@@ -16,6 +16,16 @@
 		5718C00221FA772600A8E4B8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5718C00121FA772600A8E4B8 /* AppError.swift */; };
 		5718C00421FA77AA00A8E4B8 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5718C00321FA77AA00A8E4B8 /* DataPersistenceManager.swift */; };
 		5718C00621FA78BA00A8E4B8 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5718C00521FA78BA00A8E4B8 /* ImageHelper.swift */; };
+		6275093E21FB9AF800029892 /* NYTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275093D21FB9AF800029892 /* NYTViewController.swift */; };
+		6275094121FB9B5000029892 /* NYTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275094021FB9B5000029892 /* NYTView.swift */; };
+		6275094421FB9CBE00029892 /* NYTDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275094321FB9CBE00029892 /* NYTDetailViewController.swift */; };
+		6275094621FB9CDD00029892 /* NYTDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275094521FB9CDD00029892 /* NYTDetailView.swift */; };
+		6275094821FB9DC500029892 /* NYTBestsellers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275094721FB9DC500029892 /* NYTBestsellers.swift */; };
+		6275094B21FB9EC800029892 /* NYTBestsellerAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275094A21FB9EC800029892 /* NYTBestsellerAPIClient.swift */; };
+		6275094E21FBA7FE00029892 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275094D21FBA7FE00029892 /* FavoriteViewController.swift */; };
+		6275095021FBA80A00029892 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275094F21FBA80A00029892 /* SettingsViewController.swift */; };
+		6275095621FBAB5900029892 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275095521FBAB5900029892 /* FavoriteView.swift */; };
+		6275095821FBAB6400029892 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275095721FBAB6400029892 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +40,16 @@
 		5718C00121FA772600A8E4B8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		5718C00321FA77AA00A8E4B8 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		5718C00521FA78BA00A8E4B8 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		6275093D21FB9AF800029892 /* NYTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTViewController.swift; sourceTree = "<group>"; };
+		6275094021FB9B5000029892 /* NYTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTView.swift; sourceTree = "<group>"; };
+		6275094321FB9CBE00029892 /* NYTDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTDetailViewController.swift; sourceTree = "<group>"; };
+		6275094521FB9CDD00029892 /* NYTDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTDetailView.swift; sourceTree = "<group>"; };
+		6275094721FB9DC500029892 /* NYTBestsellers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellers.swift; sourceTree = "<group>"; };
+		6275094A21FB9EC800029892 /* NYTBestsellerAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellerAPIClient.swift; sourceTree = "<group>"; };
+		6275094D21FBA7FE00029892 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		6275094F21FBA80A00029892 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6275095521FBAB5900029892 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		6275095721FBAB6400029892 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +85,10 @@
 				5718C00721FA78E800A8E4B8 /* Network Services */,
 				5718C00921FA791C00A8E4B8 /* File Manager Helpers */,
 				5718C00821FA790000A8E4B8 /* Date Helpers */,
+				6275094921FB9DCF00029892 /* Model */,
+				6275094C21FB9ED100029892 /* API Client */,
+				6275093F21FB9AFC00029892 /* Controllers */,
+				6275094221FB9B5300029892 /* Views */,
 				5718BFFA21FA75C000A8E4B8 /* Supporting Files */,
 				5718BFF421FA75A900A8E4B8 /* Info.plist */,
 			);
@@ -106,6 +130,44 @@
 				5718C00321FA77AA00A8E4B8 /* DataPersistenceManager.swift */,
 			);
 			path = "File Manager Helpers";
+			sourceTree = "<group>";
+		};
+		6275093F21FB9AFC00029892 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6275093D21FB9AF800029892 /* NYTViewController.swift */,
+				6275094321FB9CBE00029892 /* NYTDetailViewController.swift */,
+				6275094D21FBA7FE00029892 /* FavoriteViewController.swift */,
+				6275094F21FBA80A00029892 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6275094221FB9B5300029892 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6275094021FB9B5000029892 /* NYTView.swift */,
+				6275094521FB9CDD00029892 /* NYTDetailView.swift */,
+				6275095521FBAB5900029892 /* FavoriteView.swift */,
+				6275095721FBAB6400029892 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6275094921FB9DCF00029892 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6275094721FB9DC500029892 /* NYTBestsellers.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6275094C21FB9ED100029892 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				6275094A21FB9EC800029892 /* NYTBestsellerAPIClient.swift */,
+			);
+			path = "API Client";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +241,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5718C00021FA771800A8E4B8 /* NetworkHelper.swift in Sources */,
+				6275094421FB9CBE00029892 /* NYTDetailViewController.swift in Sources */,
 				5718BFFC21FA763200A8E4B8 /* String+DateExtensions.swift in Sources */,
 				5718C00221FA772600A8E4B8 /* AppError.swift in Sources */,
+				6275094B21FB9EC800029892 /* NYTBestsellerAPIClient.swift in Sources */,
+				6275095821FBAB6400029892 /* SettingsView.swift in Sources */,
+				6275095021FBA80A00029892 /* SettingsViewController.swift in Sources */,
 				5718C00421FA77AA00A8E4B8 /* DataPersistenceManager.swift in Sources */,
+				6275094121FB9B5000029892 /* NYTView.swift in Sources */,
+				6275095621FBAB5900029892 /* FavoriteView.swift in Sources */,
+				6275094821FB9DC500029892 /* NYTBestsellers.swift in Sources */,
+				6275093E21FB9AF800029892 /* NYTViewController.swift in Sources */,
 				5718BFE921FA75A800A8E4B8 /* AppDelegate.swift in Sources */,
+				6275094E21FBA7FE00029892 /* FavoriteViewController.swift in Sources */,
 				5718BFFE21FA764E00A8E4B8 /* Date+Extensions.swift in Sources */,
 				5718C00621FA78BA00A8E4B8 /* ImageHelper.swift in Sources */,
+				6275094621FB9CDD00029892 /* NYTDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

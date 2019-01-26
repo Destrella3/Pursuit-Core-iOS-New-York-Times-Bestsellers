@@ -10,10 +10,11 @@ import UIKit
 
 class NYTViewController: UIViewController {
 
+    let nytView = NYTView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(nytView)
         
     }
 

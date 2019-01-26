@@ -20,11 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let vc = NYTViewController()
     let nav = UINavigationController.init(rootViewController: vc)
     let tab = UITabBarController.init()
-    tab.viewControllers = [nav, NYTViewController(), FavoriteViewController(), SettingsViewController()]
+    let favTab = FavoriteViewController()
+    let setTab = SettingsViewController()
+    tab.viewControllers = [nav, favTab, setTab]
+    nav.tabBarItem = UITabBarItem(title: "NYT Bestseller", image: UIImage(named: "nytbestsellers"), tag: 0)
+    favTab.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(named: "favorites"), tag: 1)
+    setTab.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 2)
     window = UIWindow.init(frame: UIScreen.main.bounds)
     window?.rootViewController = tab
     window?.makeKeyAndVisible()
-    
+
     return true
   }
 

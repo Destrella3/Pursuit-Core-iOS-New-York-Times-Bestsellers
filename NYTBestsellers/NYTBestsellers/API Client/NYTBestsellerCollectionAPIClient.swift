@@ -9,8 +9,8 @@
 import Foundation
 
 final class NYTBestsellerCollectionAPIClient {
-    static func getCollection(onCompletion: @escaping ((AppError?, [BookData]?) -> Void)) {
-        NetworkHelper.shared.performDataTask(endpointURLString: "https://api.nytimes.com/svc/books/v3/lists.json?api-key=\(SecretKey.APIKey)=Combined Print and E-Book Fiction") { (appError, data) in
+    static func getCollection(list: String, onCompletion: @escaping ((AppError?, [BookData]?) -> Void)) {
+        NetworkHelper.shared.performDataTask(endpointURLString: "https://api.nytimes.com/svc/books/v3/lists.json?api-key=\(SecretKey.APIKey)&list=\(list)") { (appError, data) in
             if let appError = appError {
                 onCompletion(appError, nil)
             } else if let data = data {

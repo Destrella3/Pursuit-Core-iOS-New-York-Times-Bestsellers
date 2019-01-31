@@ -10,11 +10,12 @@ import UIKit
 
 class NYTDetailViewController: UIViewController {
 
+    let detailView = NYTDetailView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(detailView)
 
-       
     }
 
 }

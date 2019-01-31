@@ -12,7 +12,13 @@ class NYTViewController: UIViewController {
     
     let nytView = NYTView()
     
-    var books = [BookData]()
+    var books = [BookData]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.nytView.collectionView.reloadData()
+            }
+        }
+    }
     
     var bookClass = [Books]() {
         didSet {
@@ -27,10 +33,14 @@ class NYTViewController: UIViewController {
         view.addSubview(nytView)
         uploadPickerData()
         uploadCollectionData()
+        dump(books)
+        dump(bookClass)
     }
     
     private func uploadCollectionData() {
-        NYTBestsellerCollectionAPIClient.getCollection { (appError, collection) in
+        nytView.collectionView.delegate = self
+        nytView.collectionView.dataSource = self
+        NYTBestsellerCollectionAPIClient.getCollection(list: "Combined-Print-and-E-Book-Fiction") { (appError, collection) in
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let data = collection {
@@ -66,8 +76,24 @@ extension NYTViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
 }
 
+extension NYTViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return books.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as? BookCell else {return UICollectionViewCell()}
+        let weekToSet = books[indexPath.row]
+        let bookToSet = books[indexPath.row].bookDetails
+        cell.descriptionLabel.text = bookToSet.first?.description
+        cell.bestSellerLabel.text = "\(weekToSet.weeksOnList) weeks on Bestseller List"
+        return cell
+    }
+}
+
 extension NYTViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigationController?.pushViewController(NYTDetailViewController(), animated: true)
     }
 }
+

@@ -19,6 +19,7 @@ class BookCell: UICollectionViewCell {
     lazy var bestSellerLabel: UILabel = {
         let label = UILabel()
         label.text = "Number of Weeks on List"
+        label.font = .boldSystemFont(ofSize: 15)
         label.textAlignment = .center
         return label
     }()
@@ -26,14 +27,14 @@ class BookCell: UICollectionViewCell {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Descritpion"
-        label.numberOfLines = 0
-        label.backgroundColor = .gray
+        label.numberOfLines = 1
+        label.backgroundColor = .white
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .blue
+        self.backgroundColor = .gray
         setupImageView()
         setupLabel()
         setupDescriptionLabel()
@@ -48,7 +49,7 @@ class BookCell: UICollectionViewCell {
         bestSellerImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             bestSellerImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            bestSellerImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+            bestSellerImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 4),
             bestSellerImage.heightAnchor.constraint(equalToConstant: 150),
             bestSellerImage.widthAnchor.constraint(equalToConstant: 125)
             ])
@@ -58,9 +59,9 @@ class BookCell: UICollectionViewCell {
         addSubview(bestSellerLabel)
         bestSellerLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            bestSellerLabel.topAnchor.constraint(equalTo: bestSellerImage.bottomAnchor, constant: 11),
-            bestSellerLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            bestSellerLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5)
+            bestSellerLabel.topAnchor.constraint(equalTo: bestSellerImage.bottomAnchor, constant: 12),
+            bestSellerLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            bestSellerLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)
             ])
     }
     
@@ -68,9 +69,9 @@ class BookCell: UICollectionViewCell {
         addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: bestSellerLabel.bottomAnchor, constant: 11),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            descriptionLabel.topAnchor.constraint(equalTo: bestSellerLabel.bottomAnchor, constant: 21),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             ])
     }
 }

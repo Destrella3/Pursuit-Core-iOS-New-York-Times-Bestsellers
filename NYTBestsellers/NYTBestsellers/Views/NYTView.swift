@@ -10,16 +10,13 @@ import UIKit
 
 class NYTView: UIView {
     
-    
-    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 180, height: 250)
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
         layout.scrollDirection = .horizontal
         let ct = UICollectionView.init(frame: self.frame, collectionViewLayout: layout)
-        ct.dataSource = self
-        ct.backgroundColor = .gray
+        ct.backgroundColor = .white
         
         return ct
     }()
@@ -75,17 +72,6 @@ extension NYTView {
     }
 }
 
-extension NYTView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 25
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as? BookCell else {return UICollectionViewCell()}
-        
-        return cell
-    }
-}
 
 
 

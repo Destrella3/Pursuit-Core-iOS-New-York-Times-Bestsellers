@@ -11,5 +11,13 @@ import UIKit
 class NYTDetailView: UIView {
 
 
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        backgroundColor = .white
+
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        super .init(coder: aDecoder)
+    }
 }

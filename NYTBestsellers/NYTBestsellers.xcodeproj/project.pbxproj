@@ -27,6 +27,12 @@
 		6275095621FBAB5900029892 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275095521FBAB5900029892 /* FavoriteView.swift */; };
 		6275095821FBAB6400029892 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275095721FBAB6400029892 /* SettingsView.swift */; };
 		6275095D21FBDEB300029892 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275095C21FBDEB300029892 /* BookCell.swift */; };
+		6275095F21FBF48A00029892 /* NYTBestsellersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275095E21FBF48A00029892 /* NYTBestsellersCollection.swift */; };
+		6275096121FBFA2800029892 /* NYTBestsellersDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275096021FBFA2800029892 /* NYTBestsellersDetail.swift */; };
+		627509A12200E74800029892 /* SecretKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627509A02200E74800029892 /* SecretKey.swift */; };
+		627509A42200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627509A32200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift */; };
+		627509A62201160A00029892 /* NYTBestsellerDetailAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627509A52201160A00029892 /* NYTBestsellerDetailAPIClient.swift */; };
+		62750A042202796B00029892 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62750A032202796B00029892 /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +58,12 @@
 		6275095521FBAB5900029892 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		6275095721FBAB6400029892 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6275095C21FBDEB300029892 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		6275095E21FBF48A00029892 /* NYTBestsellersCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellersCollection.swift; sourceTree = "<group>"; };
+		6275096021FBFA2800029892 /* NYTBestsellersDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellersDetail.swift; sourceTree = "<group>"; };
+		627509A02200E74800029892 /* SecretKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKey.swift; sourceTree = "<group>"; };
+		627509A32200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellerCollectionAPIClient.swift; sourceTree = "<group>"; };
+		627509A52201160A00029892 /* NYTBestsellerDetailAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellerDetailAPIClient.swift; sourceTree = "<group>"; };
+		62750A032202796B00029892 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +99,9 @@
 				5718C00721FA78E800A8E4B8 /* Network Services */,
 				5718C00921FA791C00A8E4B8 /* File Manager Helpers */,
 				5718C00821FA790000A8E4B8 /* Date Helpers */,
-				6275094921FB9DCF00029892 /* Model */,
 				6275094C21FB9ED100029892 /* API Client */,
+				627509A22200E74C00029892 /* Keys */,
+				6275094921FB9DCF00029892 /* Model */,
 				6275093F21FB9AFC00029892 /* Controllers */,
 				6275095B21FBDDC300029892 /* Cell */,
 				6275094221FB9B5300029892 /* Views */,
@@ -161,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				6275094721FB9DC500029892 /* NYTBestsellers.swift */,
+				6275095E21FBF48A00029892 /* NYTBestsellersCollection.swift */,
+				6275096021FBFA2800029892 /* NYTBestsellersDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				6275094A21FB9EC800029892 /* NYTBestsellerAPIClient.swift */,
+				627509A32200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift */,
+				627509A52201160A00029892 /* NYTBestsellerDetailAPIClient.swift */,
 			);
 			path = "API Client";
 			sourceTree = "<group>";
@@ -177,8 +194,17 @@
 			isa = PBXGroup;
 			children = (
 				6275095C21FBDEB300029892 /* BookCell.swift */,
+				62750A032202796B00029892 /* FavoriteCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		627509A22200E74C00029892 /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				627509A02200E74800029892 /* SecretKey.swift */,
+			);
+			path = Keys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,15 +277,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627509A62201160A00029892 /* NYTBestsellerDetailAPIClient.swift in Sources */,
+				627509A42200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift in Sources */,
 				6275095D21FBDEB300029892 /* BookCell.swift in Sources */,
+				6275095F21FBF48A00029892 /* NYTBestsellersCollection.swift in Sources */,
 				5718C00021FA771800A8E4B8 /* NetworkHelper.swift in Sources */,
 				6275094421FB9CBE00029892 /* NYTDetailViewController.swift in Sources */,
+				627509A12200E74800029892 /* SecretKey.swift in Sources */,
 				5718BFFC21FA763200A8E4B8 /* String+DateExtensions.swift in Sources */,
 				5718C00221FA772600A8E4B8 /* AppError.swift in Sources */,
 				6275094B21FB9EC800029892 /* NYTBestsellerAPIClient.swift in Sources */,
 				6275095821FBAB6400029892 /* SettingsView.swift in Sources */,
 				6275095021FBA80A00029892 /* SettingsViewController.swift in Sources */,
 				5718C00421FA77AA00A8E4B8 /* DataPersistenceManager.swift in Sources */,
+				62750A042202796B00029892 /* FavoriteCell.swift in Sources */,
 				6275094121FB9B5000029892 /* NYTView.swift in Sources */,
 				6275095621FBAB5900029892 /* FavoriteView.swift in Sources */,
 				6275094821FB9DC500029892 /* NYTBestsellers.swift in Sources */,
@@ -269,6 +300,7 @@
 				5718BFFE21FA764E00A8E4B8 /* Date+Extensions.swift in Sources */,
 				5718C00621FA78BA00A8E4B8 /* ImageHelper.swift in Sources */,
 				6275094621FB9CDD00029892 /* NYTDetailView.swift in Sources */,
+				6275096121FBFA2800029892 /* NYTBestsellersDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

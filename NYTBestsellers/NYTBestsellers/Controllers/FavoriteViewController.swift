@@ -10,12 +10,12 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
 
+    let favView = FavoriteView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(favView)
         
     }
-    
-
-
 }
+

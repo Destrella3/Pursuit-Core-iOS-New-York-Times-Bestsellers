@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct NYTBestseller {
-    
-    
+struct NYTBestseller: Codable {
+    let results: [Books]
 }
+
+struct Books: Codable {
+   let listName: String
+    enum CodingKeys: String, CodingKey {
+        case listName = "list_name"
+    }
+}
+

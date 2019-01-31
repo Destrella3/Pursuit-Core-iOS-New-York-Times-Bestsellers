@@ -10,9 +10,11 @@ import UIKit
 
 class NYTView: UIView {
     
+    
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: 100, height: 100)
+        layout.itemSize = CGSize.init(width: 180, height: 250)
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
         layout.scrollDirection = .horizontal
         let ct = UICollectionView.init(frame: self.frame, collectionViewLayout: layout)
@@ -21,10 +23,10 @@ class NYTView: UIView {
         
         return ct
     }()
-    
+ 
     lazy var pickerView: UIPickerView = {
         let pv = UIPickerView()
-        
+        pv.backgroundColor = .white
         return pv
     }()
     
@@ -48,6 +50,7 @@ class NYTView: UIView {
 extension NYTView {
     private func setupViews() {
         setupCollectionView()
+        setupPickerView()
     }
     
     private func setupCollectionView() {
@@ -59,11 +62,22 @@ extension NYTView {
             collectionView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.5)
             ])
     }
+    
+    private func setupPickerView() {
+        addSubview(pickerView)
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pickerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            pickerView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            pickerView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            pickerView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.5)
+            ])
+    }
 }
 
 extension NYTView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 25
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,7 +85,7 @@ extension NYTView: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
+
+
 

@@ -14,12 +14,17 @@ struct NYTBestSellersDetail: Codable {
 }
 
 struct VolumnInfo: Codable {
-    let volumeInfo: [BookInfo]
+    let volumeInfo: [BookInfo]?
 }
 
 struct BookInfo: Codable {
+    let imageLinks: [Images]
     let title: String
     let description: String
+    
+}
+
+struct Images: Codable {
     let smallThumbnail: String
     let thumbnail: String
 }

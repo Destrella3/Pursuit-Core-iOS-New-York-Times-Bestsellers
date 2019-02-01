@@ -33,6 +33,7 @@
 		627509A42200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627509A32200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift */; };
 		627509A62201160A00029892 /* NYTBestsellerDetailAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627509A52201160A00029892 /* NYTBestsellerDetailAPIClient.swift */; };
 		62750A042202796B00029892 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62750A032202796B00029892 /* FavoriteCell.swift */; };
+		62750A062203AACC00029892 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62750A052203AACC00029892 /* Favorite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		627509A32200EE8000029892 /* NYTBestsellerCollectionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellerCollectionAPIClient.swift; sourceTree = "<group>"; };
 		627509A52201160A00029892 /* NYTBestsellerDetailAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBestsellerDetailAPIClient.swift; sourceTree = "<group>"; };
 		62750A032202796B00029892 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		62750A052203AACC00029892 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				6275094721FB9DC500029892 /* NYTBestsellers.swift */,
 				6275095E21FBF48A00029892 /* NYTBestsellersCollection.swift */,
 				6275096021FBFA2800029892 /* NYTBestsellersDetail.swift */,
+				62750A052203AACC00029892 /* Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				6275093E21FB9AF800029892 /* NYTViewController.swift in Sources */,
 				5718BFE921FA75A800A8E4B8 /* AppDelegate.swift in Sources */,
 				6275094E21FBA7FE00029892 /* FavoriteViewController.swift in Sources */,
+				62750A062203AACC00029892 /* Favorite.swift in Sources */,
 				5718BFFE21FA764E00A8E4B8 /* Date+Extensions.swift in Sources */,
 				5718C00621FA78BA00A8E4B8 /* ImageHelper.swift in Sources */,
 				6275094621FB9CDD00029892 /* NYTDetailView.swift in Sources */,

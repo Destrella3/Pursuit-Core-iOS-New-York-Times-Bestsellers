@@ -36,7 +36,6 @@ class SettingsView: UIView {
             pickerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)
             ])
     }
-    
 }
 
 

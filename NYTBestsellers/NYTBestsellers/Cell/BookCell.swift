@@ -24,12 +24,13 @@ class BookCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Descritpion"
-        label.numberOfLines = 1
-        label.backgroundColor = .white
-        return label
+    lazy var descriptionLabel: UITextView = {
+        let textView = UITextView()
+        textView.text = "Descritpion"
+        textView.backgroundColor = .white
+        textView.isEditable = false
+        textView.isSelectable = false
+        return textView
     }()
     
     override init(frame: CGRect) {
@@ -37,7 +38,7 @@ class BookCell: UICollectionViewCell {
         self.backgroundColor = .gray
         setupImageView()
         setupLabel()
-        setupDescriptionLabel()
+        setupDescriptionTextView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,13 +66,14 @@ class BookCell: UICollectionViewCell {
             ])
     }
     
-    func setupDescriptionLabel() {
+    func setupDescriptionTextView() {
         addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: bestSellerLabel.bottomAnchor, constant: 21),
+            descriptionLabel.topAnchor.constraint(equalTo: bestSellerLabel.bottomAnchor, constant: 8),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4)
             ])
     }
 }

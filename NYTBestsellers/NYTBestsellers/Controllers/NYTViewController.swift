@@ -11,6 +11,12 @@ import UIKit
 class NYTViewController: UIViewController {
     
     let nytView = NYTView()
+    var pickerTitle = "" {
+        didSet {
+            uploadCollectionData()
+        }
+    }
+    var googleBooks = [BookInfo]()
     
     var books = [BookData]() {
         didSet {
@@ -33,18 +39,23 @@ class NYTViewController: UIViewController {
         view.addSubview(nytView)
         uploadPickerData()
         uploadCollectionData()
-        dump(books)
-        dump(bookClass)
     }
     
     private func uploadCollectionData() {
         nytView.collectionView.delegate = self
         nytView.collectionView.dataSource = self
-        NYTBestsellerCollectionAPIClient.getCollection(list: "Combined-Print-and-E-Book-Fiction") { (appError, collection) in
+        NYTBestsellerCollectionAPIClient.getCollection(list: pickerTitle.replacingOccurrences(of: " ", with: "-")) { (appError, collection) in
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let data = collection {
                 self.books = data
+            }
+        }
+        NYTBestsellerDetailAPIClient.getDetails { (appError, info) in
+            if let appError = appError {
+                print(appError.errorMessage())
+            } else if let info = info {
+                self.googleBooks = info
             }
         }
     }
@@ -74,6 +85,10 @@ extension NYTViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return bookClass[row].listName
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         self.pickerTitle = bookClass[row].listName
+    }
 }
 
 extension NYTViewController: UICollectionViewDataSource {
@@ -83,10 +98,17 @@ extension NYTViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as? BookCell else {return UICollectionViewCell()}
-        let weekToSet = books[indexPath.row]
+        let booksToSet = books[indexPath.row]
         let bookToSet = books[indexPath.row].bookDetails
         cell.descriptionLabel.text = bookToSet.first?.description
-        cell.bestSellerLabel.text = "\(weekToSet.weeksOnList) weeks on Bestseller List"
+        cell.bestSellerLabel.text = "\(booksToSet.weeksOnList) weeks on Bestseller List"
+        ImageHelper.fetchImageFromNetwork(urlString: googleBooks.first?.imageLinks.first?.smallThumbnail.description ?? "") { (appError, image) in
+            if let appError = appError {
+                print(appError.errorMessage())
+            } else if let image = image {
+                cell.bestSellerImage.image = image
+            }
+        }
         return cell
     }
 }
@@ -96,4 +118,3 @@ extension NYTViewController: UICollectionViewDelegate {
         navigationController?.pushViewController(NYTDetailViewController(), animated: true)
     }
 }
-
